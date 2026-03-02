@@ -1,65 +1,140 @@
-<!-- GGDC OVERLAY (HEADER + BANNER + BOTTOM NAV ONLY) -->
-<div class="ggdc-overlay" id="ggdcOverlay">
-  <!-- HEADER -->
-  <header class="ggdc-header">
-    <div class="ggdc-logo">
-      <a href="LINK_LOGO" target="_blank">
-        <img src="https://img.solidteam.link/logo.png" alt="SOLIDTOTO">
-      </a>
-    </div>
+/* ========== GGDC OVERLAY: HEADER + BANNER + BOTTOM NAV ONLY ========== */
+.ggdc-overlay{
+  --gold:#FFD700;
+  --bg: rgba(0,0,0,.97);
 
-    <div class="ggdc-auth-btns">
-      <a class="ggdc-btn ggdc-btn-login" href="LINK_MASUK" target="_blank">MASUK</a>
-      <a class="ggdc-btn ggdc-btn-daftar" href="LINK_DAFTAR" target="_blank">DAFTAR</a>
-    </div>
-  </header>
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 999999;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #fff;
 
-  <!-- CENTER BANNER -->
-  <main class="ggdc-center">
-    <div class="ggdc-main-banner">
-      <a href="LINK_BANNER" target="_blank">
-        <img src="https://image.solidteam.link/img/disco04.webp" alt="PROMO">
-      </a>
-    </div>
-  </main>
+  display: none;              /* ditampilkan lewat class is-open */
+  grid-template-rows: auto 1fr auto;  /* header | center | bottom nav */
+}
 
-  <!-- BOTTOM NAV -->
-  <nav class="ggdc-bottom-nav">
-    <a href="LINK_HOME" class="ggdc-nav-link" target="_blank">
-      <!-- icon home -->
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg>
-      <span>HOME</span>
-    </a>
+.ggdc-overlay.is-open{ display: grid; }
 
-    <a href="LINK_PROMO" class="ggdc-nav-link" target="_blank">
-      <!-- icon $ -->
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2c3 0 5 1.5 5 4 0 2-1.2 3.1-3.7 3.7l-1.3.3c-1.7.4-2 .8-2 1.6 0 1 .9 1.5 2.5 1.5 1.9 0 3-.7 3.4-2l2 .7C17.3 21 15 22 12 22v2h-2v-2c-3.2-.2-5.5-1.9-5.5-4.8 0-2.4 1.4-3.8 4.2-4.5l1.6-.4c1.8-.4 2.1-.8 2.1-1.6 0-1-.9-1.5-2.4-1.5-1.7 0-2.8.7-3.2 2l-2-.7C5.4 5.4 7.4 4.2 10 4V2z"/></svg>
-      <span>PROMO</span>
-    </a>
+.ggdc-overlay *{ box-sizing: border-box; }
 
-    <a href="LINK_DAFTAR_BAWAH" class="ggdc-nav-link ggdc-nav-daftar" target="_blank" aria-label="Daftar">
-      <span class="ggdc-floating-daftar">+</span>
-      <span>DAFTAR</span>
-    </a>
+/* ---------- HEADER ---------- */
+.ggdc-header{
+  background: linear-gradient(180deg, #1a1400 0%, #000 100%);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--gold);
+}
 
-    <a href="LINK_BANTUAN" class="ggdc-nav-link" target="_blank">
-      <!-- icon ? -->
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18h2v-2h-2v2zm1-16C6.9 2 3 5.9 3 11s3.9 9 9 9 9-3.9 9-9-3.9-9-9-9zm0 16c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zm0-12c-1.7 0-3 1.3-3 3h2c0-.6.4-1 1-1s1 .4 1 1c0 1-1.5.9-1.9 2.6-.1.3-.1.5-.1.4v.5h2v-.3c.2-1.2 2-1.3 2-3.2 0-1.7-1.3-3-3-3z"/></svg>
-      <span>BANTUAN</span>
-    </a>
+.ggdc-logo img{
+  height: 34px;
+  width: auto;
+  display: block;
+}
 
-    <a href="LINK_CHAT" class="ggdc-nav-link" target="_blank">
-      <!-- icon chat -->
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H7l-3 3V4zm3 5h10v2H7V9zm0-3h10v2H7V6zm0 6h7v2H7v-2z"/></svg>
-      <span>CHAT</span>
-    </a>
-  </nav>
-</div>
+.ggdc-auth-btns{
+  display: flex;
+  gap: 10px;
+}
 
-<script>
-  // tampilkan overlay saat halaman kebuka
-  window.addEventListener("load", () => {
-    const el = document.getElementById("ggdcOverlay");
-    if (el) el.classList.add("is-open");
-  });
-</script>
+.ggdc-btn{
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  border: 1.5px solid var(--gold);
+  transition: .2s ease;
+}
+
+.ggdc-btn-login{
+  background: transparent;
+  color: var(--gold);
+}
+
+.ggdc-btn-daftar{
+  background: var(--gold);
+  color:#000;
+  box-shadow: 0 0 16px rgba(255,215,0,.55);
+}
+
+/* ---------- CENTER BANNER ---------- */
+.ggdc-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.ggdc-main-banner{
+  width: min(920px, 92vw);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+.ggdc-main-banner a{ display: block; }
+.ggdc-main-banner img{
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .25s ease;
+}
+
+.ggdc-main-banner a:hover img{ transform: scale(1.02); }
+
+/* ---------- BOTTOM NAV ---------- */
+.ggdc-bottom-nav{
+  background: rgba(0,0,0,.97);
+  border-top: 2px solid var(--gold);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  gap: 8px;
+}
+
+.ggdc-nav-link{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ggdc-nav-link svg{
+  width: 22px;
+  height: 22px;
+  fill: var(--gold);
+  margin-bottom: 4px;
+}
+
+.ggdc-nav-daftar{ position: relative; top: -18px; }
+
+.ggdc-floating-daftar{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold);
+  color:#000;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 900;
+  border: 4px solid #000;
+  box-shadow: 0 0 22px rgba(255,215,0,.6);
+  margin-bottom: 6px;
+}
+
+/* Responsif */
+@media (max-width: 420px){
+  .ggdc-logo img{ height: 30px; }
+  .ggdc-btn{ padding: 9px 12px; font-size: 11px; }
+  .ggdc-floating-daftar{ width: 52px; height: 52px; }
+}
