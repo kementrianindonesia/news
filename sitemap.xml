@@ -12,11 +12,32 @@
         <news:language>id</news:language>
       </news:publication>
       <news:publication_date>2026-03-22T10:00:00+07:00</news:publication_date>
-      <news:title>Mengatasi kekalahan saat bermain slot dengan cara lebih tenang agar bisa mencoba kembali dengan pikiran jernih di situasi yang sering membuat panik tanpa disadari</news:title>
+      <news:title>
+        Mengatasi kekalahan saat bermain slot dengan cara lebih tenang agar bisa mencoba kembali dengan pikiran jernih di situasi yang sering membuat panik tanpa disadari
+      </news:title>
     </news:news>
 
     <image:image>
       <image:loc>https://image.solidteam.link/uploads/solidtoto-06.webp</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kementrianindonesia.github.io/news/Langkah-menang-bermain-slot-dengan-pola-efektif-hasil-lebih-stabil-yang-kini-banyak-digunakan-pemain-lama.html</loc>
+
+    <news:news>
+      <news:publication>
+        <news:name>Kementrian Indonesia News</news:name>
+        <news:language>id</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-23T10:00:00+07:00</news:publication_date>
+      <news:title>
+        Langkah menang bermain slot dengan pola efektif hasil lebih stabil yang kini banyak digunakan pemain lama
+      </news:title>
+    </news:news>
+
+    <image:image>
+      <image:loc>https://image.solidteam.link/uploads/solidtoto-17.webp</image:loc>
     </image:image>
   </url>
 
